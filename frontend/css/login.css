@@ -1,0 +1,87 @@
+/* Login Page Styles */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.login-card {
+    background: white;
+    padding: 50px 40px;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 450px;
+    animation: fadeIn 0.5s ease;
+}
+
+.logo {
+    text-align: center;
+    font-size: 4rem;
+    margin-bottom: 10px;
+    animation: bounce 1s ease;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.login-card h1 {
+    text-align: center;
+    color: var(--primary);
+    margin-bottom: 10px;
+    font-size: 2rem;
+}
+
+.subtitle {
+    text-align: center;
+    color: var(--text-light);
+    margin-bottom: 40px;
+    font-size: 1rem;
+}
+
+.demo-credentials {
+    margin-top: 30px;
+    padding: 20px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 12px;
+    border-left: 4px solid var(--primary);
+}
+
+.demo-title {
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 12px;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.demo-item {
+    padding: 8px 0;
+    color: var(--text-light);
+    font-size: 0.95rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.demo-item strong {
+    color: var(--text-dark);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .login-card {
+        padding: 40px 30px;
+    }
+
+    .logo {
+        font-size: 3rem;
+    }
+
+    .login-card h1 {
+        font-size: 1.6rem;
+    }
+}

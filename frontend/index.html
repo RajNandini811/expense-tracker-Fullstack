@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💰 Smart Expense Tracker</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <!-- Login Page -->
+    <div id="loginPage" class="page active">
+        <div class="login-container">
+            <div class="login-card">
+                <div class="logo">💰</div>
+                <h1>Expense Tracker</h1>
+                <p class="subtitle">Track your spending, save smarter</p>
+                
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" placeholder="Enter username" required autocomplete="username">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="Enter password" required autocomplete="current-password">
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-block">
+                        <span class="btn-text">Login</span>
+                        <span class="btn-loader" style="display: none;">Loading...</span>
+                    </button>
+                    
+                    <div id="loginError" class="error-message" style="display: none;"></div>
+                </form>
+
+                <div class="demo-credentials">
+                    <p class="demo-title">📋 Demo Credentials</p>
+                    <div class="demo-item">
+                        <strong>Username:</strong> john
+                    </div>
+                    <div class="demo-item">
+                        <strong>Password:</strong> password123
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dashboard Page -->
+    <div id="dashboardPage" class="page">
+        <!-- Header -->
+        <header class="header">
+            <div class="container">
+                <div class="header-content">
+                    <div class="header-left">
+                        <div class="logo-small">💰</div>
+                        <h1>Smart Expense Tracker</h1>
+                    </div>
+                    <div class="header-right">
+                        <span id="userName" class="user-name">Welcome!</span>
+                        <button id="logoutBtn" class="btn btn-secondary btn-sm">Logout</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="container">
+            <!-- Stats Cards -->
+            <div class="stats-grid">
+                <div class="stat-card stat-card-1">
+                    <div class="stat-icon">💵</div>
+                    <div class="stat-details">
+                        <p class="stat-label">Total Spent</p>
+                        <h2 class="stat-value" id="totalSpent">₹0</h2>
+                    </div>
+                </div>
+
+                <div class="stat-card stat-card-2">
+                    <div class="stat-icon">💰</div>
+                    <div class="stat-details">
+                        <p class="stat-label">Budget Left</p>
+                        <h2 class="stat-value" id="budgetLeft">₹0</h2>
+                    </div>
+                </div>
+
+                <div class="stat-card stat-card-3">
+                    <div class="stat-icon">📊</div>
+                    <div class="stat-details">
+                        <p class="stat-label">Savings Rate</p>
+                        <h2 class="stat-value" id="savingsRate">0%</h2>
+                    </div>
+                </div>
+
+                <div class="stat-card stat-card-4">
+                    <div class="stat-icon">🎯</div>
+                    <div class="stat-details">
+                        <p class="stat-label">Monthly Income</p>
+                        <h2 class="stat-value" id="monthlyIncome">₹0</h2>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content Grid -->
+            <div class="content-grid">
+                <!-- Add Expense Form -->
+                <div class="card form-card">
+                    <h3 class="card-title">➕ Add New Expense</h3>
+                    <form id="expenseForm">
+                        <div class="form-group">
+                            <label for="category">Category</label>
+                            <select id="category" required>
+                                <option value="">Select category...</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="amount">Amount (₹)</label>
+                            <input type="number" id="amount" placeholder="0.00" step="0.01" min="0.01" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="description">Description</label>
+                            <input type="text" id="description" placeholder="What did you spend on?" required maxlength="100">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="date">Date</label>
+                            <input type="date" id="date" required>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block">
+                            <span class="btn-text">➕ Add Expense</span>
+                            <span class="btn-loader" style="display: none;">Adding...</span>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Pie Chart -->
+                <div class="card chart-card">
+                    <h3 class="card-title">📊 Spending Breakdown</h3>
+                    <div class="chart-container">
+                        <canvas id="pieChart"></canvas>
+                        <div id="noDataMessage" class="no-data" style="display: none;">
+                            <p>📊 No expenses yet</p>
+                            <p class="small">Add your first expense to see the breakdown</p>
+                        </div>
+                    </div>
+                    <div id="chartLegend" class="chart-legend"></div>
+                </div>
+            </div>
+
+            <!-- AI Insights -->
+            <div id="insightsContainer" class="insights-container">
+                <!-- AI insights will be rendered here -->
+            </div>
+
+            <!-- Category Breakdown -->
+            <div class="card">
+                <h3 class="card-title">📈 Category Details</h3>
+                <div class="category-breakdown" id="categoryBreakdown">
+                    <div class="loading">Loading...</div>
+                </div>
+            </div>
+
+            <!-- Recent Expenses -->
+            <div class="card">
+                <h3 class="card-title">📝 Recent Expenses</h3>
+                <div class="expense-list" id="expenseList">
+                    <div class="loading">Loading expenses...</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/config.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/expenses.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
