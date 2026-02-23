@@ -1,8 +1,8 @@
-# 💰 Smart Expense Tracker - Complete Application
+# Smart Expense Tracker - Complete Application
 
 A fully functional, clean, and simple expense tracking web application with AI-powered insights.
 
-## ✨ Features
+## Features
 
 - ✅ **User Authentication** - Secure login with proper validation
 - ✅ **Add/Edit/Delete Expenses** - Full CRUD operations
@@ -13,7 +13,7 @@ A fully functional, clean, and simple expense tracking web application with AI-p
 - ✅ **Responsive Design** - Works on all devices
 - ✅ **Clean Code** - Well-organized and documented
 
-## 🏗️ Project Structure
+##  Project Structure
 
 ```
 expense-tracker-complete/
@@ -48,7 +48,7 @@ expense-tracker-complete/
     └── index.html               # Main HTML file
 ```
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### Prerequisites
 
@@ -75,7 +75,7 @@ expense-tracker-complete/
    You should see:
    ```
    ════════════════════════════════════════════════
-     💰 EXPENSE TRACKER API SERVER
+        EXPENSE TRACKER API SERVER
    ════════════════════════════════════════════════
      ✅ Server running on: http://localhost:3000
    ```
@@ -85,7 +85,7 @@ expense-tracker-complete/
    - Navigate to `frontend` folder
    - Open `index.html` in your browser (double-click or use live server)
 
-### 🔑 Demo Credentials
+### Demo Credentials
 
 ```
 Username: john
@@ -99,7 +99,7 @@ Username: jane
 Password: pass456
 ```
 
-## 📚 API Documentation
+##  API Documentation
 
 ### Base URL
 ```
@@ -172,7 +172,7 @@ Get all available categories
 | ❌ No validation | ✅ Complete input validation |
 | ❌ "Cannot GET /" error | ✅ Proper routing with root endpoint |
 
-## 🎨 Technologies Used
+##  Technologies Used
 
 ### Frontend
 - **HTML5** - Structure
@@ -186,7 +186,7 @@ Get all available categories
 - **CORS** - Cross-origin requests
 - **Body-parser** - Request parsing
 
-## 🔧 Configuration
+##  Configuration
 
 ### Port Configuration
 Default port is `3000`. To change:
@@ -204,7 +204,7 @@ const CONFIG = {
 };
 ```
 
-## 💾 Data Storage
+##  Data Storage
 
 Currently uses **in-memory storage** for demo purposes.
 
@@ -215,7 +215,7 @@ For production, replace with a real database:
 
 Database code is in `backend/config/database.js`
 
-## 🎨 Customization
+##  Customization
 
 ### Add New Categories
 
@@ -255,7 +255,7 @@ this.users = [
 ];
 ```
 
-## 🐛 Troubleshooting
+##  Troubleshooting
 
 ### "Cannot GET /" Error
 ✅ **Fixed!** The root endpoint now returns API information.
@@ -279,7 +279,7 @@ this.users = [
 - Backend has CORS enabled by default
 - If still issues, check browser security settings
 
-## 📱 Responsive Design
+##  Responsive Design
 
 Works perfectly on:
 - ✅ Desktop (1920px+)
@@ -287,7 +287,7 @@ Works perfectly on:
 - ✅ Tablet (768px)
 - ✅ Mobile (375px)
 
-## 🔒 Security Notes
+##  Security Notes
 
 **For Production:**
 - Use HTTPS
@@ -298,7 +298,7 @@ Works perfectly on:
 - Add input sanitization
 - Implement CSRF protection
 
-## 🚀 Future Enhancements
+##  Future Enhancements
 
 - [ ] User registration
 - [ ] Password reset
@@ -310,11 +310,11 @@ Works perfectly on:
 - [ ] Email notifications
 - [ ] Mobile app
 
-## 📄 License
+##  License
 
 Open source - Free to use and modify
 
-## 🙋 Support
+##  Support
 
 If you encounter issues:
 
@@ -326,4 +326,4 @@ If you encounter issues:
 
 ---
 
-**Enjoy tracking your expenses! 💰📊**
+**Enjoy tracking your expenses! **
